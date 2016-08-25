@@ -1,0 +1,83 @@
+#%RAML 1.0
+  ---
+  title: Plantalytics API
+  baseUri: http://104.197.35.232:8000/
+  version: v1
+  mediaType: application/json
+
+
+/health_check:
+  description: A simple endpoint to indicate that the backend is operational.
+  get:
+
+/hub_data:
+  description: Stores data supplied by a hub into the database.
+  post:
+
+/login:
+  description: Verifies a user's credentials and supplies them with an authentication token. Also retrieves the vineyards they are authorized to view.
+  post:
+
+/env_data:
+  description: Retrieves most recent environmental data.
+  post:
+
+/vineyard:
+  description: Retrieves the center point and boundary points of an existing vineyard.
+  post:
+
+/password:
+  /change:
+    description: 'Changes the password for an existing user.
+                 There are 3 use cases anticipated:
+                 1) The current user is logged in and trying to change their own password.
+                    a) An "old" password, new "password" and a valid "auth_token" must be given. 
+                    b) The "token" and "username" are ignored.
+                 2) The current user is the administrator. 
+                    a) The admin''s valid "auth_token", the "username", and the new "password" must be supplied. 
+                    b) "old" and "token" are ignored.
+                 3) The user forgot the password and has used the /reset endpoint below.
+                    a) A "username" must be specified and a matching password reset "token" must be given, as well as a new "password"
+                    b) The "old" and "auth_token" will be ignored.'
+    post:
+
+  /reset:
+    description: Generates a reset password token and sends email to user's stored address.
+Request a password reset email for submitted username. Password will not be changed at the time of request, it will simply generate a password reset token and dispatch an email to the user, allowing the user to continue the process.
+    post:
+
+/email_change:
+  description: Changes the email address in the database of an existing (currently logged in) user.
+  post:
+
+/admin:
+  /user:
+    description: Retrieves user information.
+    post:
+
+    /new:
+      description: Creates a new user in the database.
+      post:
+    /edit:
+      description: Edits an existing user in the database.
+      post:
+    /subscription:
+      description: Update the subscription end date for a user.
+      post:
+    /disable:
+      description: Disables a user. User will no longer be allowed to login, auth tokens will be disabled, but associated data will remain.
+      post:
+
+  /vineyard:
+    description: Retrieves extra vineyard information like the owner(s) and other authenticated users.
+    post:
+
+    /new:
+      description: Creates a new vineyard in the database.
+      post:
+    /edit:
+      description: Edits an existing vineyard in the database.
+      post:
+    /disable:
+      description: Disables a vineyard. Vineyard will no longer be accessible but associated data will remain.
+      post:
