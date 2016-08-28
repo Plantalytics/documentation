@@ -1,0 +1,5 @@
+{
+  "errors": {
+    "auth_error_not_found": "Auth token not found."
+  }
+}

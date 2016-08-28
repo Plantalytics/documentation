@@ -1,0 +1,49 @@
+{
+  "env_data": [
+    {
+      "latitude": 45.280799865723,
+      "leafwetness": 581,
+      "longitude": -123.06287384033
+    },
+    {
+      "latitude": 45.280681610107,
+      "leafwetness": 980,
+      "longitude": -123.06207275391
+    },
+    {
+      "latitude": 45.28050994873,
+      "leafwetness": 284,
+      "longitude": -123.06133270264
+    },
+    {
+      "latitude": 45.281677246094,
+      "leafwetness": 1200,
+      "longitude": -123.06253051758
+    },
+    {
+      "latitude": 45.281555175781,
+      "leafwetness": 220,
+      "longitude": -123.06183624268
+    },
+    {
+      "latitude": 45.281421661377,
+      "leafwetness": 772,
+      "longitude": -123.06112670898
+    },
+    {
+      "latitude": 45.28125,
+      "leafwetness": 51,
+      "longitude": -123.06261444092
+    },
+    {
+      "latitude": 45.28112411499,
+      "leafwetness": 273,
+      "longitude": -123.06189727783
+    },
+    {
+      "latitude": 45.280990600586,
+      "leafwetness": 338,
+      "longitude": -123.06114196777
+    }
+  ]
+}

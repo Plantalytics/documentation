@@ -1,30 +1,99 @@
 #%RAML 0.8
-  ---
-  title: Plantalytics API
-  baseUri: http://104.197.35.232:8000/
-  version: v1
-  mediaType: application/json
+title: Plantalytics API
+baseUri: http://104.197.35.232:8000/
+version: v1
+mediaType: application/json
 
 
 /health_check:
   description: A simple endpoint to indicate that the backend is operational.
   get:
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include responses/health_check-200.json
 
 /hub_data:
   description: Stores data supplied by a hub into the database.
   post:
+    body:
+      application/json:
+        schema: !include schemas/hub_data.schema.json
+        example: !include requests/hub_data.json
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include generic/err_empty.json
+      400:
+        body:
+          application/json:
+            example: !include generic/err_unknown.json
+      403:
+        body:
+          application/json:
+            example: !include responses/hub_data-403.json
+  put:
+    description: Same as POST.
+
 
 /login:
   description: Verifies a user's credentials and supplies them with an authentication token. Also retrieves the vineyards they are authorized to view.
   post:
+    body:
+      application/json:
+        schema: !include schemas/login.schema.json
+        example: !include requests/login.json
+    responses:
+      200:
+        description: Empty response.
+      403:
+        body:
+          application/json:
+            example: !include responses/login-403.json
 
 /env_data:
   description: Retrieves most recent environmental data.
   post:
+    body:
+      application/json:
+        schema: !include schemas/env_data.schema.json
+        example: !include requests/env_data.json
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include responses/env_data-200.json
+      400:
+        body:
+          application/json:
+            example: !include generic/err_unknown.json
+      403:
+        body:
+          application/json:
+            example: !include generic/err_auth.json
 
 /vineyard:
   description: Retrieves the center point and boundary points of an existing vineyard.
   post:
+    body:
+      application/json:
+        schema: !include schemas/vineyard.schema.json
+        example: !include requests/vineyard.json
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include responses/vineyard-200.json
+      400:
+        body:
+          application/json:
+            example: !include responses/vineyard-400.json
+      403:
+        body:
+          application/json:
+            example: !include generic/err_auth.json
 
 /password:
   /change:
@@ -43,7 +112,7 @@
 
   /reset:
     description: Generates a reset password token and sends email to user's stored address.
-Request a password reset email for submitted username. Password will not be changed at the time of request, it will simply generate a password reset token and dispatch an email to the user, allowing the user to continue the process.
+                 Request a password reset email for submitted username. Password will not be changed at the time of request, it will simply generate a password reset token and dispatch an email to the user, allowing the user to continue the process.
     post:
 
 /email_change:

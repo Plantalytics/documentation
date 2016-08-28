@@ -1,0 +1,15 @@
+{
+  "key": "0000000000000000000000000",
+  "vine_id": 1,
+  "hub_id": 1,
+  "hub_data": [
+    {
+      "node_id": 2,
+      "temperature": 80.7,
+      "humidity": 80.7,
+      "leafwetness": 80.7,
+      "data_sent": 1472363601267,
+    }
+  ],
+  "batch_sent": 1472363700668
+}

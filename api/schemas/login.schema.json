@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+
+  "properties": {
+    "username": {
+      "description": "Username (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "password": {
+      "description": "Password (string)",
+      "type": "string",
+      "required": true
+    }
+  }
+}
