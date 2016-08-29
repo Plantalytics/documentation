@@ -1,0 +1,15 @@
+{
+	"auth_token": "ad5e89bd-fc1e-4804-98d3-000000000000",
+	"new_user_info": {
+		"username": "testmake",
+		"password": "huff88",
+		"email": "tester@plantalytics.us",
+		"admin": false,
+		"enable": false,
+		"subenddate": "2016-08-29",
+		"userid": 2,
+		"vineyards": [
+			0
+		]
+	}
+}

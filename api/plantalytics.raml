@@ -172,30 +172,147 @@ mediaType: application/json
   /user:
     description: Retrieves user information.
     post:
+      body:
+        application/json:
+          schema: !include schemas/admin/user.schema.json
+          example: !include requests/admin/user.json
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include responses/admin/user-200.json
+        403:
+          body:
+            application/json:
+              example: !include responses/admin/user-403.json
 
     /new:
       description: Creates a new user in the database.
       post:
+        body:
+          application/json:
+            schema: !include schemas/admin/user/new.schema.json
+            example: !include requests/admin/user/new.json
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include generic/err_empty.json
+          403:
+            body:
+              application/json:
+                example: !include responses/admin/err_auth.json
     /edit:
       description: Edits an existing user in the database.
       post:
+        body:
+          application/json:
+            schema: !include schemas/admin/user/edit.schema.json
+            example: !include requests/admin/user/edit.json
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include generic/err_empty.json
+          403:
+            body:
+              application/json:
+                example: !include responses/admin/err_auth.json
     /subscription:
       description: Update the subscription end date for a user.
       post:
+        body:
+          application/json:
+            schema: !include schemas/admin/user/subscription.schema.json
+            example: !include requests/admin/user/subscription.json
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include generic/err_empty.json
+          403:
+            body:
+              application/json:
+                example: !include responses/admin/err_auth.json
     /disable:
       description: Disables a user. User will no longer be allowed to login, auth tokens will be disabled, but associated data will remain.
       post:
+        body:
+          application/json:
+            schema: !include schemas/admin/user/disable.schema.json
+            example: !include requests/admin/user/disable.json
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include generic/err_empty.json
+          403:
+            body:
+              application/json:
+                example: !include responses/admin/err_auth.json
 
   /vineyard:
     description: Retrieves extra vineyard information like the owner(s) and other authenticated users.
     post:
+      body:
+        application/json:
+          schema: !include schemas/admin/vineyard.schema.json
+          example: !include requests/admin/vineyard.json
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include responses/admin/vineyard-200.json
+        403:
+          body:
+            application/json:
+              example: !include responses/admin/err_auth.json
 
     /new:
       description: Creates a new vineyard in the database.
       post:
+        body:
+          application/json:
+            schema: !include schemas/admin/vineyard/new.schema.json
+            example: !include requests/admin/vineyard/new.json
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include generic/err_empty.json
+          403:
+            body:
+              application/json:
+                example: !include responses/admin/err_auth.json
     /edit:
       description: Edits an existing vineyard in the database.
       post:
+        body:
+          application/json:
+            schema: !include schemas/admin/vineyard/edit.schema.json
+            example: !include requests/admin/vineyard/edit.json
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include generic/err_empty.json
+          403:
+            body:
+              application/json:
+                example: !include responses/admin/err_auth.json
     /disable:
       description: Disables a vineyard. Vineyard will no longer be accessible but associated data will remain.
       post:
+        body:
+          application/json:
+            schema: !include schemas/admin/vineyard/disable.schema.json
+            example: !include requests/admin/vineyard/disable.json
+        responses:
+          200:
+            body:
+              application/json:
+                example: !include generic/err_empty.json
+          403:
+            body:
+              application/json:
+                example: !include responses/admin/err_auth.json

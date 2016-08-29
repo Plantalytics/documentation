@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+
+  "properties": {
+    "auth_token": {
+      "description": "Authentication token (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "request_username": {
+      "description": "Username to update (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "sub_end_date": {
+      "description": "New subscription end date (string)",
+      "type": "string",
+      "required": true
+    }
+  }
+}

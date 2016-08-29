@@ -1,0 +1,5 @@
+{
+  "errors": {
+    "username_invalid": "Requested username is invalid."
+  }
+}
