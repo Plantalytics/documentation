@@ -109,15 +109,62 @@ mediaType: application/json
                     a) A "username" must be specified and a matching password reset "token" must be given, as well as a new "password"
                     b) The "old" and "auth_token" will be ignored.'
     post:
+      body:
+        application/json:
+          schema: !include schemas/password/change.schema.json
+          example: !include requests/password/change.json
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include generic/err_empty.json
+        400:
+          body:
+            application/json:
+              example: !include responses/password/change-400.json
+        403:
+          body:
+            application/json:
+              example: !include responses/password/change-403.json
 
   /reset:
     description: Generates a reset password token and sends email to user's stored address.
                  Request a password reset email for submitted username. Password will not be changed at the time of request, it will simply generate a password reset token and dispatch an email to the user, allowing the user to continue the process.
     post:
+      body:
+        application/json:
+          schema: !include schemas/password/reset.schema.json
+          example: !include requests/password/reset.json
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include generic/err_empty.json
+        403:
+          body:
+            application/json:
+              example: !include responses/password/reset-403.json
 
 /email_change:
   description: Changes the email address in the database of an existing (currently logged in) user.
   post:
+      body:
+        application/json:
+          schema: !include schemas/email_change.schema.json
+          example: !include requests/email_change.json
+      responses:
+        200:
+          body:
+            application/json:
+              example: !include generic/err_empty.json
+        400:
+          body:
+            application/json:
+              example: !include responses/email_change-400.json
+        403:
+          body:
+            application/json:
+              example: !include responses/email_change-403.json
 
 /admin:
   /user:

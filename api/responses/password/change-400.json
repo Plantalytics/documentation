@@ -1,0 +1,5 @@
+{
+  "errors": {
+    "reset_error_username": "An error occurred resetting the password. Bad username."
+  }
+}

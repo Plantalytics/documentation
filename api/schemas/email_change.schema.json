@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+
+  "properties": {
+    "auth_token": {
+      "description": "Authentication token (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "new_email": {
+      "description": "New email address (string)",
+      "type": "string",
+      "required": true
+    }
+  }
+}
