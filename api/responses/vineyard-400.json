@@ -1,0 +1,5 @@
+{
+  "errors": {
+    "vineyard_unknown": "An unexpected error occurred while fetching the vineyard ID. Transaction Error Occurred: "
+  }
+}

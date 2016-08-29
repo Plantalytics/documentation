@@ -1,0 +1,13 @@
+{
+  "owners": [
+    "John Doe",
+    "Jane Doe"
+  ],
+  "is_enable": true,
+  "name": "erath",
+  "users": [
+    "welches",
+    "testmake",
+    "winetester01"
+  ]
+}

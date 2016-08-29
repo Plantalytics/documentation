@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+
+  "properties": {
+    "auth_token": {
+      "description": "Authentication token (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "vineyard_id": {
+      "description": "Vineyard id (integer)",
+      "type": "number",
+      "required": true
+    },
+
+    "env_variable": {
+      "description": "Environmental variable (string)\nOne of:\n* temperature\n* humidity\n* leafwetness",
+      "type": "string",
+      "required": true
+    }
+  }
+}

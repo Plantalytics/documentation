@@ -1,0 +1,36 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+
+  "properties": {
+    "username": {
+      "description": "Username (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "password": {
+      "description": "Password (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "old": {
+      "description": "Old password (string)",
+      "type": "string",
+      "required": false
+    },
+
+    "token": {
+      "description": "Password reset token (string)",
+      "type": "string",
+      "required": false
+    },
+
+    "auth_token": {
+      "description": "Authentication token (string)",
+      "type": "string",
+      "required": false
+    }
+  }
+}

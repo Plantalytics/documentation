@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+
+  "properties": {
+    "auth_token": {
+      "description": "Authentication token (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "new_user_info": {
+      "type": "object",
+
+      "properties": {
+        "username": {
+          "description": "Username (string)",
+          "type": "string",
+          "required": true
+        },
+
+        "password": {
+          "description": "Password (string)",
+          "type": "string",
+          "required": true
+        },
+        
+        "email": {
+          "description": "Email address (string)",
+          "type": "string",
+          "required": true
+        },
+        
+        "admin": {
+          "description": "Set as admin (boolean)",
+          "type": "boolean",
+          "required": true
+        },
+        
+        "enable": {
+          "description": "Enable the user (boolean)",
+          "type": "boolean",
+          "required": true
+        },
+        
+        "subenddate": {
+          "description": "Subscription end date (YYYY-MM-DD) (string)",
+          "type": "string",
+          "required": true
+        },
+        
+        "userid": {
+          "description": "User ID (integer)",
+          "type": "number",
+          "required": true
+        },
+        
+        "vineyards": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+
+          "items": {
+            "description": "Vineyard id (integer)",
+            "type": "number"
+          }
+        }
+      }
+    }
+  }
+}

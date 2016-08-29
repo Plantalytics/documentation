@@ -1,0 +1,5 @@
+{
+  "errors": {
+    "email_reset_error": "Email Error: Invalid username."
+  }
+}

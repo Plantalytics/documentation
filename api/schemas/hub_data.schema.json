@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+
+  "properties": {
+    "key": {
+      "description": "Unique value to validate a hub (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "vine_id": {
+      "description": "Vineyard id (integer)",
+      "type": "number",
+      "required": true
+    },
+
+    "hub_id": {
+      "description": "Hub id (integer)",
+      "type": "number",
+      "required": true
+    },
+
+    "hub_data": {
+      "type": "array",
+      "required": true,
+
+      "items": {
+        "type": "object",
+
+        "properties": {
+          "node_id": {
+            "description": "Node id (integer)",
+            "type": "number",
+            "required": true
+          },
+
+          "temperature": {
+            "description": "Value (float)",
+            "type": "number",
+            "required": true
+          },
+
+          "humidity": {
+            "description": "Value (float)",
+            "type": "number",
+            "required": true
+          },
+
+          "leafwetness": {
+            "description": "Value (float)",
+            "type": "number",
+            "required": true
+          },
+
+          "data_sent": {
+            "description": "Date and time of transmission from node (integer)",
+            "type": "number",
+            "required": true
+          }
+        }
+      }
+    },
+
+    "batch_sent": {
+      "description": "Date and time of transmission from hub (integer)",
+      "type": "number",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-03/schema#",
+  "type": "object",
+
+  "properties": {
+    "auth_token": {
+      "description": "Authentication token (string)",
+      "type": "string",
+      "required": true
+    },
+
+    "new_vineyard_info": {
+      "type": "object",
+
+      "properties": {
+        "vineyard_id": {
+          "description": "Vineyard ID (integer)",
+          "type": "number",
+          "required": true
+        },
+
+        "name": {
+          "description": "Vineyard name (string)",
+          "type": "string",
+          "required": true
+        },
+        
+        "enable": {
+          "description": "Enable the user (boolean)",
+          "type": "boolean",
+          "required": true
+        },
+
+        "owners": {
+          "type": "array",
+          "required": true,
+          "minItems": 1,
+          "uniqueItems": true,
+
+          "items": {
+            "description": "Owner name (string)",
+            "type": "string"
+          }
+        },
+        
+        "boundaries": {
+          "type": "array",
+          "required": true,
+          "minItems": 3,
+          "uniqueItems": true,
+
+          "items": {
+            "type": "object",
+
+            "properties": {
+              "lat": {
+                "description": "Latitude (float)",
+                "type": "number",
+                "required": true
+              },
+
+              "lon": {
+                "description": "Longitude (float)",
+                "type": "number",
+                "required": true
+              }
+            }
+          }
+        },
+
+        "center": {
+          "description": "Vineyard center (displayed map's center)",
+          "type": "object",
+          "required": true,
+
+          "properties": {
+            "lat": {
+              "description": "Latitude (float)",
+              "type": "number",
+              "required": true
+            },
+
+            "lon": {
+              "description": "Longitude (float)",
+              "type": "number",
+              "required": true
+            }
+          }
+        }
+      }
+    }
+  }
+}
