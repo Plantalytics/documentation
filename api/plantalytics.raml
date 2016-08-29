@@ -47,7 +47,9 @@ mediaType: application/json
         example: !include requests/login.json
     responses:
       200:
-        description: Empty response.
+        body:
+          application/json:
+            example: !include responses/login-200.json
       403:
         body:
           application/json:
